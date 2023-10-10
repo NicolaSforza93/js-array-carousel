@@ -3,3 +3,44 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 120px 0px;
+}
+
+.slider {
+    max-width: 400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    display: block;
+}
+
+.previous {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: lightgray;
+    border-radius: 50%;
+    line-height: 19px;
+    padding: 0px 2px;
+    cursor: pointer;
+}
+
+.next {
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    transform: translate(-50%);
+    background-color: lightgray;
+    border-radius: 50%;
+    line-height: 19px;
+    padding: 0px 2px;
+    cursor: pointer;
+}
