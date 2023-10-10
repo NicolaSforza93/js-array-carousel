@@ -44,3 +44,11 @@
     padding: 0px 2px;
     cursor: pointer;
 }
+
+.slide > * {
+    display: none;
+}
+
+.slide .active {
+    display: block;
+}
