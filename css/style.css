@@ -21,7 +21,7 @@
     display: block;
 }
 
-.previous {
+.ctrl-previous {
     position: absolute;
     top: 5px;
     left: 50%;
@@ -33,7 +33,7 @@
     cursor: pointer;
 }
 
-.next {
+.ctrl-next {
     position: absolute;
     left: 50%;
     bottom: 5px;
