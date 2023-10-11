@@ -19,6 +19,9 @@
 .slide img {
     width: 100%;
     display: block;
+    aspect-ratio: 7/7;
+    object-fit: cover;
+    object-position: right center;
 }
 
 .ctrl-previous {

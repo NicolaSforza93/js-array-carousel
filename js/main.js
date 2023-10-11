@@ -1,5 +1,11 @@
 // - creo un array con le immagini che mi servono
-const images = ['./img/01.webp', './img/02.webp', './img/03.webp', './img/04.webp', './img/05.webp'];
+const images = [
+    './img/01.webp', // 0
+    './img/02.webp', // 1
+    './img/03.webp', // 2
+    './img/04.webp', // 3
+    './img/05.webp'  // 4
+]; // images.length - 1
 console.log(images);
 // - prendo dal Dom l'elemento 'slide'
 const slideDomElement = document.querySelector('.slide');
@@ -22,30 +28,38 @@ for (let i = 0; i < images.length; i++) {
 // - fuori dal ciclo for prendo dal dom l'elemento con classe 'image'
 const imageDomElement = document.getElementsByClassName('image');
 console.log(imageDomElement);
+
+let currentIndex = 0;
 // - aggiungo una classe alla prima immagine 
-const firstImageDomElement = imageDomElement[0];
-firstImageDomElement.classList.add('active');
-console.log(firstImageDomElement)
+let currentSlide = imageDomElement[currentIndex];
+currentSlide.classList.add('active');
+console.log(currentSlide);
 
 
-const ctrlDomElement = document.querySelector('.ctrl-next');
-ctrlDomElement.addEventListener('click', function () {
-    
-    firstImageDomElement.classList.remove('active');
-
-    const nextImageDomElement = imageDomElement[1];
-    nextImageDomElement.classList.add('active');
-
-
+const ctrlNext = document.querySelector('.ctrl-next');
+ctrlNext.addEventListener('click', function () {
+    currentSlide.classList.remove('active');
+    //currentIndex += 1; //
+    if (currentIndex === images.length - 1) { //ultimo elemento dell'array
+        currentIndex = 0;
+    } else {
+        currentIndex++; //si incrementa, va avanti
+    }
+    currentSlide = imageDomElement[currentIndex];
+    currentSlide.classList.add('active');   
+     
 })
 
+const ctrlPrevious = document.querySelector('.ctrl-previous');
+ctrlPrevious.addEventListener('click', function () {
+    currentSlide.classList.remove('active');
+    // currentIndex += -1;
+    if (currentIndex === images.length - 5) { //primo elemento dell'array
+         currentIndex = 4;
+     } else {
+         currentIndex--;
+     }
+    currentSlide = imageDomElement[currentIndex]; 
+    currentSlide.classList.add('active');
 
-
-
-
-
-
-
-
-
-
+})
